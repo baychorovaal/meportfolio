@@ -220,27 +220,15 @@ main {
 }
 
 .project-one {
-  background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80");
+  background-image: url("amina.png");
 }
 
 .project-two {
-  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80");
+  background-image: url("emoji.png");
 }
 
 .project-three {
-  background-image: url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80");
-}
-
-.project-four {
-  background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80");
-}
-
-.project-five {
-  background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80");
-}
-
-.project-six {
-  background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80");
+  background-image: url("elbrus.jpg");
 }
 
 .project-meta {
@@ -322,6 +310,22 @@ main {
   transform: translate(-50%, -50%) scale(1.2);
   box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
   border-width: 3px;
+}
+
+.cursor-disabled #cursor,
+.cursor-disabled #cursor-trail {
+  display: none;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 1024px) {
+  body {
+    cursor: auto;
+  }
+
+  #cursor,
+  #cursor-trail {
+    display: none;
+  }
 }
 
 @media (max-width: 720px) {

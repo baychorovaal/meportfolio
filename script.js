@@ -1,6 +1,14 @@
 const cursor = document.getElementById("cursor");
 const cursorTrail = document.getElementById("cursor-trail");
 
+const isTouchDevice = () =>
+  window.matchMedia("(hover: none), (pointer: coarse)").matches ||
+  window.innerWidth <= 1024;
+
+if (isTouchDevice()) {
+  document.body.classList.add("cursor-disabled");
+}
+
 const cursorState = {
   x: window.innerWidth / 2,
   y: window.innerHeight / 2,
@@ -23,6 +31,9 @@ const animateCursor = () => {
 };
 
 window.addEventListener("mousemove", (event) => {
+  if (document.body.classList.contains("cursor-disabled")) {
+    return;
+  }
   cursorState.x = event.clientX;
   cursorState.y = event.clientY;
 });
@@ -31,6 +42,9 @@ const hoverTargets = "a, button, .btn, .project-card, .contact-card";
 
 document.querySelectorAll(hoverTargets).forEach((element) => {
   element.addEventListener("mouseenter", () => {
+    if (document.body.classList.contains("cursor-disabled")) {
+      return;
+    }
     document.body.classList.add("cursor-hover");
   });
   element.addEventListener("mouseleave", () => {
@@ -53,4 +67,6 @@ fetch("https://leetcode-stats-api.herokuapp.com/baychorovaal")
     document.getElementById("leetcode-hard").textContent = "N/A";
   });
 
-animateCursor();
+if (!document.body.classList.contains("cursor-disabled")) {
+  animateCursor();
+}
