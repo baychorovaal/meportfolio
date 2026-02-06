@@ -228,6 +228,10 @@ main {
 }
 
 .project-three {
+  background-image: url("бд.png");
+}
+
+.project-four {
   background-image: url("elbrus.jpg");
 }
 
