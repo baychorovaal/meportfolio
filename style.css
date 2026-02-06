@@ -235,6 +235,10 @@ main {
   background-image: url("elbrus.jpg");
 }
 
+.project-five {
+  background-image: url("masha.png");
+}
+
 .project-meta {
   padding: 20px;
 }
